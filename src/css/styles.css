@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Creepster&display=swap');
+
+body {
+  font-family: 'Creepster', cursive;
+  background-image: url('./../../assets/images/jene-yeo-O9HBCpi1hME-unsplash.jpg');
+  color: orange;
+}
+form {
+  background-color: black;
+}
+
+#showResponse{
+  background-color: black;
+}
+
+.bat1 {
+  font-size:200px;
+  display: block;
+  text-align: center;
+}
+
+.bat2 {
+  font-size:150px;
+  display: block;
+  text-align: left;
+  
+}
+
+.bat3 {
+  font-size:75px;
+  display: block;
+  text-align: right;
+  margin-right: 100px;
+}
+
