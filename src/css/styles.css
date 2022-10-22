@@ -1,33 +1,68 @@
 @import url('https://fonts.googleapis.com/css2?family=Creepster&display=swap');
 
+#pumpkins {
+  font-size: 80px;
+}
+
 body {
+  width: 100%;
   font-family: 'Creepster', cursive;
   background-image: url('./../../assets/images/jene-yeo-O9HBCpi1hME-unsplash.jpg');
   color: orange;
 }
+
+h1 {
+  color: red
+}
+
+p { 
+  font-size: 25px;
+  color: black;
+}
+.ISO-4217 {
+  margin-top: 5px;
+  color: red;
+} 
+
+.link {
+  color: darkblue;
+} 
+
+pre {
+  display: block;
+  color: darkgreen;
+  font-family: 'Creepster', cursive;
+  font-size: 20px;
+  margin-bottom: 0;
+}
+
 form {
   background-color: black;
+  color: red;
+  font-size: 15px;
+  display: block;
 }
 
 #showResponse{
-  background-color: black;
+  background-color: red;
+  font-size: 25px;
 }
 
 .bat1 {
-  font-size:200px;
+  margin-bottom: 0px;
+  font-size: 100px;
   display: block;
   text-align: center;
 }
 
 .bat2 {
-  font-size:150px;
+  font-size:80px;
   display: block;
-  text-align: left;
-  
+  text-align: left; 
 }
 
 .bat3 {
-  font-size:75px;
+  font-size:70px;
   display: block;
   text-align: right;
   margin-right: 100px;
