@@ -34,7 +34,7 @@ function handleFormSubmission(event) {
   const currencyAmount = document.querySelector('#currencyAmount').value;
   document.querySelector('#currencyAmount').value = null;
   const baseCurrency = document.querySelector('#baseCurrency').value;
-  document.querySelector('#baseCurrency').value = null;
+  document.querySelector("#baseCurrency").value = null;
   getAPIData(currencyAmount,baseCurrency.toUpperCase());
 }
 

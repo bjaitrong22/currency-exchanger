@@ -43,7 +43,12 @@ pre {
   margin-bottom: 0px;
 }
 
-form {
+#form-info {
+  width: 340px;
+  display: block;
+}
+
+label,input,button {
   background-color: black;
   color: red;
   font-size: 15px;
@@ -89,4 +94,6 @@ form {
   text-align: right;
   margin-right: 100px;
 }
+
+
 
