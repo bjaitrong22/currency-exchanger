@@ -18,21 +18,25 @@ function getAPIData() {
 //UI Logic
 
 function onKeyInputChange() {
+  
   removeAutoDropDown ();
+
   const filteredCodes = [];
   let currencyCodes = Object.keys(currencyCodeAndRates);
   const value = currencyInputElement.value.toLowerCase();
 
   if(value.lenght === 0) {
     return;
-  } 
+  }
   
-  currencyCodes.forEach((element) => {
+    currencyCodes.forEach((element) => {
       if(element.toLowerCase().includes(value)) {
         console.log(element);
         filteredCodes.push(element);
       }
     });
+  
+  
 
   
   createAutoCompleteDropDown(filteredCodes);
@@ -67,6 +71,13 @@ function onCurrencyNameBtnClick(e) {
 }
 
 currencyInputElement.addEventListener("input", onKeyInputChange);
+
+currencyInputElement.addEventListener('keyup', function(event) {
+  const key = event.key;
+  if (key === "Backspace" || key === "Delete") {
+    removeAutoDropDown();
+  }
+});
 
 /*function printCurrencyRate(exchangeRates) {
   document.querySelector('#currency-rate1').innerText = `The currency exchange rate is ${exchangeRates}`;
