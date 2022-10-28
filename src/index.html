@@ -4,16 +4,15 @@
   <title> Hallow's Eve Currency Exchanger</title>
 </head> 
 <body>
-  <!--<span class="bat0">&#129415;</span>
+  <span class="bat0">&#129415;</span>
   <div class="container">
     <span id="pumpkins">&#127875; &#127875; &#127875; &#127875; &#127875; &#127875; &#127875; &#127875; &#127875;</span>
     <h1>Get the exchange rate for your SCARY currency<span>&#129415;</span></h1>
     <span class="bat">&#129415;</span>
     <p>
-      Enter your SCARY currency amount and goblin ghouls three letter Icky Slimy Ooze (ISO)4217 currency code. Below are three examples.
+      Enter your SCARY currency amount(USD) and goblin ghouls three letter Icky Slimy Ooze (ISO) 4217 currency code. Examples below:
     </p>
-    <pre>
-      United Scary Dollars: USD
+    <pre class="currency-examples">
       Thai Bhats: THB
       Goblin Bit Pounds: GBP  
     </pre>
@@ -22,15 +21,16 @@
       <a class="link" href="https://en.wikipedia.org/wiki/ISO_4217" target="_blank">ISO 4217 on wikipedia</a>
       .
     </p>
-    <span class="bat1">&#129415;</span>
-    <span class="bat2">&#129415;</span> -->
     <form action ="" autocomplete="off">
-        <div id="autocomplete-list-div" class="autocomplete-list-div">
-          <input type="text" id="conversionCurrency-input" class="autocomplete-input" placeholder="Currency Search".>
-        </div>
-        <button type="submit" class="btn-submit" id=""> submit</button>
+      <input type="number" id="amount-usd"  placeholder="Enter amount in USD currency">
+      <div id="autocomplete-list-div" class="autocomplete-list-div">
+        <input type="text" id="conversionCurrency-input" class="autocomplete-input" placeholder="Currency Search".>
       </div>
+      <button type="submit" class="btn-submit" id=""> submit</button>  
     </form>
+  </div>
+  <span class="bat1">&#129415;</span>
+  <span class="bat2">&#129415;</span>
 </body>
 </html>
 

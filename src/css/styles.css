@@ -1,92 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Creepster&display=swap');
-/*
-#pumpkins {
-  display: block;
-  margin-top: 0px;
-  margin-bottom: 0px;
-  font-size: 70px;
-  width: 100%;
-}
-
-h1 {
-  margin-top: 0px;
-  margin-bottom: 20px;
-  display: block;
-  color: red
-}
-
-p { 
-  font-size: 25px;
-  color: black;
-}
-.ISO-4217 {
-  margin-top: 5px;
-  color: red;
-} 
-
-.link {
-  color: darkblue;
-} 
-
-pre {
-  display: block;
-  color: darkgreen;
-  font-family: 'Creepster', cursive;
-  font-size: 20px;
-  margin-bottom: 0px;
-}
-
-#form-info {
-  width: 340px;
-  display: block;
-}
-
-label,input,button {
-  background-color: black;
-  color: red;
-  font-size: 15px;
-  display: block;
-}
-
-#showResponse{
-  background-color: red;
-  font-size: 25px;
-}
-
-.bat {
-  margin-bottom: 0px;
-  font-size: 30px;
-  display: block;
-  text-align: left;
-}
-
-.bat0 {
-  margin-bottom: 0px;
-  font-size: 30px;
-  display: block;
-  text-align: right;
-  margin-right: 100px;
-}
-
-.bat1 {
-  margin-bottom: 0px;
-  font-size: 100px;
-  display: block;
-  text-align: center;
-}
-
-.bat2 {
-  font-size:80px;
-  display: block;
-  text-align: left; 
-}
-
-.bat3 {
-  font-size:70px;
-  display: block;
-  text-align: right;
-  margin-right: 100px;
-}*/
 
 * {
   box-sizing: border-box;
@@ -100,6 +12,12 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+ appearance: none;
+  margin: 0;
 }
 
 input {
@@ -144,6 +62,7 @@ button {
 }
 
 .autocomplete-list button {
+  outline-color: red;
   border: unset;
   background: unset;
   display: block;
@@ -152,7 +71,92 @@ button {
   padding: .5em;
   font-size: x-large;
   color: black;
+  background-image: url('./../../assets/images/jene-yeo-O9HBCpi1hME-unsplash.jpg');
 }
+
+#pumpkins {
+  display: block;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  font-size: 70px;
+  width: 100%;
+}
+
+h1 {
+  margin-top: 0px;
+  margin-bottom: 20px;
+  display: block;
+  color: red
+}
+
+p { 
+  font-size: 25px;
+  color: black;
+}
+.ISO-4217 {
+  margin-top: 5px;
+  color: red;
+} 
+
+.link {
+  color: darkblue;
+} 
+
+.currency-examples {
+  display: inline-block;
+  color: darkgreen;
+  font-family: 'Creepster', cursive;
+  font-size: 20px;
+  border: unset;
+  margin-bottom: 0px;
+}
+
+label,input,button {
+  background-color: black;
+  color: red;
+  font-size: 15px;
+}
+
+#showResponse{
+  background-color: red;
+  font-size: 25px;
+}
+
+.bat {
+  margin-bottom: 0px;
+  font-size: 30px;
+  display: block;
+  text-align: left;
+}
+
+.bat0 {
+  margin-bottom: 0px;
+  font-size: 30px;
+  display: block;
+  text-align: right;
+  margin-right: 100px;
+}
+
+.bat1 {
+  margin-bottom: 0px;
+  font-size: 100px;
+  display: block;
+  text-align: center;
+}
+
+.bat2 {
+  font-size:80px;
+  display: block;
+  text-align: left; 
+}
+
+.bat3 {
+  font-size:70px;
+  display: block;
+  text-align: right;
+  margin-right: 100px;
+}
+
 
 
 
