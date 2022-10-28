@@ -4,7 +4,7 @@ import './css/styles.css';
 import CurrencyService from './services/currency-service';
 
 let currencyCodeAndRates = {};
-const currencyInputElement = document.querySelector("#conversionCurrency-input");
+const currencyInputElement = document.querySelector("#targetCurrency-input");
 
 function getAPIData() {
   let promise = CurrencyService.getCurrency();
@@ -14,11 +14,16 @@ function getAPIData() {
       printError(error);
     });
   }
+
+  function getConversionAmount(baseCurrencyAmount,targetCurrencyCode) {
+    let conversionRate = currencyCodeAndRates[`${targetCurrencyCode}`];
+    let convertedAmount = baseCurrencyAmount * conversionRate;
+    console.log(convertedAmount);
+  }
   
 //UI Logic
 
 function onKeyInputChange() {
-  
   removeAutoDropDown ();
 
   const filteredCodes = [];
@@ -29,15 +34,11 @@ function onKeyInputChange() {
     return;
   }
   
-    currencyCodes.forEach((element) => {
-      if(element.toLowerCase().includes(value)) {
-        console.log(element);
-        filteredCodes.push(element);
-      }
-    });
-  
-  
-
+  currencyCodes.forEach((element) => {
+    if(element.toLowerCase().includes(value)) {
+      filteredCodes.push(element);
+    }
+  });
   
   createAutoCompleteDropDown(filteredCodes);
 }
@@ -70,18 +71,12 @@ function onCurrencyNameBtnClick(e) {
   removeAutoDropDown();
 }
 
-currencyInputElement.addEventListener("input", onKeyInputChange);
-
 currencyInputElement.addEventListener('keyup', function(event) {
   const key = event.key;
   if (key === "Backspace" || key === "Delete") {
     removeAutoDropDown();
   }
 });
-
-/*function printCurrencyRate(exchangeRates) {
-  document.querySelector('#currency-rate1').innerText = `The currency exchange rate is ${exchangeRates}`;
-}*/
 
 function printError(error) {
   document.querySelector('#error').innerText = `There was a problem accessing the exchnage rate data from ExchangeRate-API for ${error}`;
@@ -93,18 +88,20 @@ function printError(error) {
   document.querySelector('#error').innerText = null;
 }*/
 
-getAPIData();
-/*function handleFormSubmission(event) {
+function handleFormSubmission(event) {
   event.preventDefault();
-  clearResults();
-  //const currencyAmount = document.querySelector('#currencyAmount').value;
-  document.querySelector('#currencyAmount').value = null;
-  //const baseCurrency = document.querySelector('#baseCurrency').value;
-  document.querySelector("#baseCurrency").value = null;
-  getAPIData();
-}*/
+  //clearResults();
+  const baseCurrencyAmount = document.querySelector('#amount-usd').value;
+  document.querySelector('#amount-usd').value = null;
+  const targetCurrencyCode = document.querySelector('#targetCurrency-input').value;
+  document.querySelector('#targetCurrency-input').value = null;
+  getConversionAmount(baseCurrencyAmount,targetCurrencyCode);
+}
 
-//window.addEventListener("load", () => {
-  //document.querySelector('form').addEventListener("input", handleFormSubmission);
-//});
+currencyInputElement.addEventListener("input", onKeyInputChange);
+
+window.addEventListener("load", () => {
+  document.querySelector('form').addEventListener("submit", handleFormSubmission);
+  getAPIData();
+});
 
