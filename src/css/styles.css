@@ -1,18 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Creepster&display=swap');
-
+/*
 #pumpkins {
   display: block;
   margin-top: 0px;
   margin-bottom: 0px;
   font-size: 70px;
   width: 100%;
-}
-
-body {
-  width: 100%;
-  font-family: 'Creepster', cursive;
-  background-image: url('./../../assets/images/jene-yeo-O9HBCpi1hME-unsplash.jpg');
-  color: orange;
 }
 
 h1 {
@@ -93,7 +86,74 @@ label,input,button {
   display: block;
   text-align: right;
   margin-right: 100px;
+}*/
+
+* {
+  box-sizing: border-box;
 }
+
+body {
+  width: 100%;
+  font-family: 'Creepster', cursive;
+  background-image: url('./../../assets/images/jene-yeo-O9HBCpi1hME-unsplash.jpg');
+  color: orange;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+input {
+  border: unset;
+  background: #e9e9e9;
+  padding: .5em;
+}
+
+button {
+  cursor: pointer;
+}
+
+.btn-submit {
+  border: unset;
+  background-color: rgb(47, 178, 222);
+  padding: .5em;
+  color:#ffffff;
+}
+
+.autocomplete-list-div {
+  display: inline-block;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.autocomplete-list {
+  list-style: none;
+  padding: unset;
+  margin: unset;
+  position: absolute;
+  width: 100%;
+}
+
+.autocomplete-list li {
+  border: 1px solid #e9e9e9;
+  border-top: unset;
+}
+
+.autocomplete-list li:hover {
+  background: #faf6f6;
+}
+
+.autocomplete-list button {
+  border: unset;
+  background: unset;
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: .5em;
+  font-size: x-large;
+  color: black;
+}
+
 
 
 
