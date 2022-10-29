@@ -6,8 +6,8 @@ import CurrencyService from './services/currency-service';
 let currencyCodeAndRates = {};
 const currencyInputElement = document.querySelector("#targetCurrency-input");
 
-function getAPIData() {
-  let promise = CurrencyService.getCurrency();
+function getAPIData(baseCurrency = 'USD') {
+  let promise = CurrencyService.getCurrency(baseCurrency);
   promise.then(function(currencyResponse){
     currencyCodeAndRates = currencyResponse[0].conversion_rates;    
     }, function(error) {
@@ -15,13 +15,22 @@ function getAPIData() {
     });
   }
 
-  function getConversionAmount(baseCurrencyAmount,targetCurrencyCode) {
-    let conversionRate = currencyCodeAndRates[`${targetCurrencyCode}`];
-    let convertedAmount = baseCurrencyAmount * conversionRate;
-    console.log(convertedAmount);
-  }
+  
   
 //UI Logic
+
+function displayConversionAmount(baseCurrencyAmount,targetCurrencyCode) {
+  let conversionRate = currencyCodeAndRates[`${targetCurrencyCode}`];
+  let convertedAmount = baseCurrencyAmount * conversionRate;
+
+  if( !isNaN(convertedAmount)) {
+    document.querySelector('#conversion-infoResult').innerText = `${baseCurrencyAmount} USD is worth ${convertedAmount.toFixed(2)} ${targetCurrencyCode} dollars! mwahahaha, muwhahaha, muahahaha, bwahahaha!!!!`; 
+  }else {
+    document.querySelector('#conversion-infoResult').innerText = `The great Pumkin can't find your precious ${targetCurrencyCode}!!. You can try again if you dare!`;
+    }
+  
+}
+
 
 function onKeyInputChange() {
   removeAutoDropDown ();
@@ -82,20 +91,19 @@ function printError(error) {
   document.querySelector('#error').innerText = `There was a problem accessing the exchnage rate data from ExchangeRate-API for ${error}`;
 }
 
-/*function clearResults() {
-  document.querySelector('#currency-rate1').innerText = null;
-  document.querySelector('#baseCurrency-info').innerText = null;
+function clearResults() {
+  document.querySelector('#conversion-infoResult').innerText = null;
   document.querySelector('#error').innerText = null;
-}*/
+}
 
 function handleFormSubmission(event) {
   event.preventDefault();
-  //clearResults();
+  clearResults();
   const baseCurrencyAmount = document.querySelector('#amount-usd').value;
   document.querySelector('#amount-usd').value = null;
   const targetCurrencyCode = document.querySelector('#targetCurrency-input').value;
   document.querySelector('#targetCurrency-input').value = null;
-  getConversionAmount(baseCurrencyAmount,targetCurrencyCode);
+  displayConversionAmount(baseCurrencyAmount,targetCurrencyCode);
 }
 
 currencyInputElement.addEventListener("input", onKeyInputChange);

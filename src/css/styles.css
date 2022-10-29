@@ -117,9 +117,12 @@ label,input,button {
   font-size: 15px;
 }
 
-#showResponse{
-  background-color: red;
+.showResponse {
+  color: red;
   font-size: 25px;
+  background-color: black;
+  padding-left: 10px;
+  border-radius: 5px;
 }
 
 .bat {
@@ -156,7 +159,6 @@ label,input,button {
   text-align: right;
   margin-right: 100px;
 }
-
 
 
 
