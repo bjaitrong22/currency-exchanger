@@ -120,15 +120,6 @@ User enters a dollar amount in US currency and enter the ISO 4217 three letter c
      * Run the command "npm run build" to bundle the files.
      * To start a development server, run the command "npm run start".
     
-# Showing your work on GitHub pages
-
-  * Use this link to view this web page on **GitHub Pages**: https://bjaitrong22.github.io/currency-exchanger.git/
-  * To create gitHub Pages for your portfolio, type **git branch gh-pages**
-  * Switch over to your gh-pages branch, type **git checkout gh-pages**
-  * Push your gh-pages branch to GitHub, type **git push origin gh-pages**
-  * If you have a nickname for your remote, you can use it in place of **origin** in the above push command.
-  * You can view your webpage at **my-github-username.github.io/repository-name**
-
 ## Known Bugs
 
   * No know bugs
