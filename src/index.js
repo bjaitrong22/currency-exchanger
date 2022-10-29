@@ -23,9 +23,11 @@ function displayConversionAmount(baseCurrencyAmount,targetCurrencyCode) {
   let conversionRate = currencyCodeAndRates[`${targetCurrencyCode}`];
   let convertedAmount = baseCurrencyAmount * conversionRate;
 
-  if( !isNaN(convertedAmount)) {
+  if( !isNaN(convertedAmount)&& convertedAmount > 0) {
     document.querySelector('#conversion-infoResult').innerText = `${baseCurrencyAmount} USD is worth ${convertedAmount.toFixed(2)} ${targetCurrencyCode} Goblin Bits! mwahahaha, muwhahaha, muahahaha, bwahahaha!!!!`; 
-  }else {
+  } else if (!isNaN(convertedAmount) && convertedAmount <= 0) {
+    document.querySelector('#conversion-infoResult').innerText = `The great Pumkin doesn't like ${baseCurrencyAmount}!!!!!. You can try again when your SCARY Dollars are in the positive realm! UGGGH!!`;
+  }  else {
     document.querySelector('#conversion-infoResult').innerText = `The great Pumkin can't find your precious ${targetCurrencyCode}!!. You can try again if you dare!`;
   } 
 }
