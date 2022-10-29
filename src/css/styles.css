@@ -32,7 +32,7 @@ button {
 
 .btn-submit {
   border: unset;
-  background-color: rgb(47, 178, 222);
+  background-color: red;
   padding: .5em;
   color:#ffffff;
 }

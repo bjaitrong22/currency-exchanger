@@ -3,34 +3,32 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
 import CurrencyService from './services/currency-service';
 
+//Business logic
+
 let currencyCodeAndRates = {};
-const currencyInputElement = document.querySelector("#targetCurrency-input");
 
 function getAPIData(baseCurrency = 'USD') {
   let promise = CurrencyService.getCurrency(baseCurrency);
   promise.then(function(currencyResponse){
     currencyCodeAndRates = currencyResponse[0].conversion_rates;    
-    }, function(error) {
-      printError(error);
+  },function(error) {
+     printError(error);
     });
   }
 
-  
-  
 //UI Logic
+const currencyInputElement = document.querySelector("#targetCurrency-input");
 
 function displayConversionAmount(baseCurrencyAmount,targetCurrencyCode) {
   let conversionRate = currencyCodeAndRates[`${targetCurrencyCode}`];
   let convertedAmount = baseCurrencyAmount * conversionRate;
 
   if( !isNaN(convertedAmount)) {
-    document.querySelector('#conversion-infoResult').innerText = `${baseCurrencyAmount} USD is worth ${convertedAmount.toFixed(2)} ${targetCurrencyCode} dollars! mwahahaha, muwhahaha, muahahaha, bwahahaha!!!!`; 
+    document.querySelector('#conversion-infoResult').innerText = `${baseCurrencyAmount} USD is worth ${convertedAmount.toFixed(2)} ${targetCurrencyCode} Goblin Bits! mwahahaha, muwhahaha, muahahaha, bwahahaha!!!!`; 
   }else {
     document.querySelector('#conversion-infoResult').innerText = `The great Pumkin can't find your precious ${targetCurrencyCode}!!. You can try again if you dare!`;
-    }
-  
+  } 
 }
-
 
 function onKeyInputChange() {
   removeAutoDropDown ();
